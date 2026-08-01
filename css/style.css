@@ -1,0 +1,1029 @@
+/* ==========================================
+            GLOBAL
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    overflow:hidden;
+    color:white;
+
+    background:linear-gradient(
+        -45deg,
+        #ff9a9e,
+        #fad0c4,
+        #fbc2eb,
+        #a18cd1
+    );
+
+    background-size:400% 400%;
+
+    animation:bgMove 15s ease infinite;
+
+}
+
+/* ==========================================
+        BACKGROUND ANIMATION
+========================================== */
+
+@keyframes bgMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* ==========================================
+            PAGE
+========================================== */
+.page{
+
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    padding:25px;
+
+    overflow:hidden;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.8s;
+
+}
+
+.page.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+/* ==========================================
+            CONTENT BOX
+========================================== */
+
+.content{
+
+    width:900px;
+
+    max-width:90%;
+
+    padding:70px;
+
+    text-align:center;
+
+    border-radius:35px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    box-shadow:
+
+        0 20px 50px rgba(0,0,0,.25);
+
+}
+
+/* ==========================================
+            TITLES
+========================================== */
+
+h1{
+
+    font-size:65px;
+
+    font-weight:800;
+
+    margin:20px 0;
+
+    text-align:center;
+
+}
+
+h2{
+
+    font-size:40px;
+
+    margin-bottom:20px;
+
+}
+
+h3{
+
+    font-size:24px;
+
+}
+
+p{
+
+    font-size:22px;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================
+            HEART
+========================================== */
+
+.main-heart{
+
+    font-size:90px;
+
+    margin:25px 0;
+
+    animation:heartbeat 1.4s infinite;
+
+}
+
+@keyframes heartbeat{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.15);
+
+}
+
+}
+
+/* ==========================================
+            BUTTON
+========================================== */
+
+button{
+
+    margin-top:30px;
+
+    padding:18px 55px;
+
+    border:none;
+
+    border-radius:60px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    background:linear-gradient(
+        135deg,
+        #ff4d88,
+        #ff85a2
+    );
+
+    transition:.35s;
+
+    box-shadow:
+
+        0 12px 30px rgba(255,80,140,.45);
+
+}
+
+button:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/* ==========================================
+            LETTER
+========================================== */
+
+.letter{
+
+    width:850px;
+
+    max-width:90%;
+
+    padding:60px;
+
+    border-radius:30px;
+
+    background:white;
+
+    color:#444;
+
+    text-align:center;
+
+    box-shadow:
+
+        0 20px 50px rgba(0,0,0,.25);
+
+}
+
+.letter h2{
+
+    color:#ff3d7f;
+
+}
+
+#typingText{
+
+    min-height:260px;
+
+    font-size:21px;
+
+    line-height:2;
+
+}
+
+/* ==========================================
+            GALLERY
+========================================== */
+/* ==========================================
+            GALLERY
+========================================== */
+
+.gallery{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    gap:25px;
+
+    margin:0;
+
+}
+
+.photo-card{
+
+    width:270px;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:12px;
+
+    box-shadow:0 18px 40px rgba(0,0,0,.18);
+
+    transition:.4s;
+
+}
+
+.photo-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.photo-card img{
+
+    width:100%;
+
+    height:360px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    display:block;
+
+}
+
+.photo-card span{
+
+    display:block;
+
+    text-align:center;
+
+    margin-top:15px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#444;
+
+}
+
+/* ==========================================
+            MEMORY POPUP
+========================================== */
+
+.popup{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.4s;
+
+    z-index:9999;
+
+}
+
+.popup.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.popup-content{
+
+    width:650px;
+
+    max-width:90%;
+
+    background:white;
+
+    color:#444;
+
+    border-radius:30px;
+
+    padding:45px;
+
+    text-align:center;
+
+    position:relative;
+
+    box-shadow:
+
+        0 25px 60px rgba(0,0,0,.35);
+
+    animation:popupScale .4s ease;
+
+}
+
+.popup-content h2{
+
+    color:#ff4d88;
+
+    margin-bottom:20px;
+
+}
+
+.popup-content p{
+
+    font-size:22px;
+
+    line-height:1.8;
+
+}
+
+.close{
+
+    position:absolute;
+
+    top:20px;
+
+    right:25px;
+
+    font-size:35px;
+
+    cursor:pointer;
+
+    color:#ff4d88;
+
+    transition:.3s;
+
+}
+
+.close:hover{
+
+    transform:rotate(90deg);
+
+}
+
+@keyframes popupScale{
+
+    from{
+
+        transform:scale(.7);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/* ==========================================
+            GIFT PAGE
+========================================== */
+
+.gift{
+
+    width:700px;
+
+    max-width:90%;
+
+    text-align:center;
+
+    padding:60px;
+
+    border-radius:35px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+
+        0 20px 50px rgba(0,0,0,.25);
+
+}
+
+.gift-box{
+
+    width:260px;
+
+    display:block;
+
+    margin:auto;
+
+    cursor:pointer;
+
+    animation:giftBounce 2s infinite;
+
+    transition:.4s;
+
+}
+
+.gift-box:hover{
+
+    transform:scale(1.08);
+
+}
+
+.gift h2{
+
+    margin-top:35px;
+
+    color:white;
+
+}
+
+@keyframes giftBounce{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+/* ==========================================
+            FINAL PAGE
+========================================== */
+.final{
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    max-width:850px;
+
+    padding:35px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:30px;
+
+    backdrop-filter:blur(20px);
+
+    text-align:center;
+
+    gap:18px;
+
+}
+
+.final h1{
+
+    font-size:65px;
+
+    margin:0;
+
+}
+
+.final p{
+
+    font-size:20px;
+
+    margin:0;
+
+    line-height:1.5;
+
+}
+
+/* ==========================================
+            MOON
+========================================== */
+
+.moon{
+
+    position:fixed;
+
+    top:60px;
+
+    right:70px;
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+
+        0 0 60px white,
+
+        0 0 120px rgba(255,255,255,.5);
+
+    opacity:.9;
+
+    z-index:-1;
+
+}
+
+/* ==========================================
+            STARS
+========================================== */
+
+.stars{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background-image:
+
+        radial-gradient(white 1px,transparent 1px);
+
+    background-size:50px 50px;
+
+    opacity:.25;
+
+    animation:starsMove 40s linear infinite;
+
+}
+
+@keyframes starsMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-200px);
+
+    }
+
+}
+
+/* ==========================================
+            FLOATING HEARTS
+========================================== */
+
+.hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+/* Remove old static hearts */
+
+.hearts::before{
+
+    content:"";
+
+}
+
+/* ==========================================
+            AUDIO
+========================================== */
+
+audio{
+
+    display:none;
+
+}
+
+/* ==========================================
+        PAGE SPECIFIC STYLING
+========================================== */
+
+#page1 .content{
+
+    animation:floatCard 5s ease-in-out infinite;
+
+}
+
+#page2 .letter{
+
+    animation:letterOpen 1s ease;
+}
+#page3{
+
+    justify-content:center;
+    align-items:center;
+
+    gap:20px;
+
+}
+
+#page3 h1{
+
+    margin:0;
+    padding:0;
+
+}
+
+#page3 button{
+
+    margin-top:5px;
+
+}
+
+#page4{
+
+    justify-content:center;
+
+    gap:35px;
+
+}
+
+#page5{
+
+    justify-content:center;
+    gap:15px;
+
+}
+
+/* ==========================================
+        GALLERY EFFECTS
+========================================== */
+
+.photo-card{
+
+    overflow:hidden;
+
+}
+
+.photo-card img{
+
+    transition:.5s;
+
+}
+
+.photo-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.photo-card span{
+
+    transition:.3s;
+
+}
+
+.photo-card:hover span{
+
+    color:#ff4d88;
+
+}
+
+/* ==========================================
+        BUTTON EFFECTS
+========================================== */
+
+button{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(255,255,255,.45),
+
+            transparent
+
+        );
+
+    transition:.6s;
+
+}
+
+button:hover::before{
+
+    left:100%;
+
+}
+
+/* ==========================================
+        GLASS EFFECT
+========================================== */
+
+.content,
+.letter,
+.gift,
+.final{
+
+    border:1px solid rgba(255,255,255,.25);
+
+}
+
+/* ==========================================
+        FLOATING ANIMATIONS
+========================================== */
+
+@keyframes floatCard{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+@keyframes letterOpen{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+            translateY(60px)
+
+            rotateX(80deg);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+            translateY(0)
+
+            rotateX(0);
+
+    }
+
+}
+
+/* ==========================================
+        GLOW TEXT
+========================================== */
+
+h1{
+
+    text-shadow:
+
+        0 0 15px rgba(255,255,255,.8),
+
+        0 0 35px rgba(255,105,180,.5);
+
+}
+
+/* ==========================================
+        PAGE TRANSITION
+========================================== */
+
+.page{
+
+    transform:scale(.96);
+
+}
+
+.page.active{
+
+    transform:scale(1);
+
+}
+
+/* ==========================================
+        SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ffd6e7;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff4d88;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#ff2f72;
+
+}
+
+/* ==========================================
+        DOT NAVIGATION
+========================================== */
+
+.dots{
+
+    position:fixed;
+
+    bottom:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    gap:10px;
+
+    z-index:999;
+
+}
+
+.dot{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.4);
+
+    transition:.3s;
+
+}
+
+.dot.active{
+
+    background:white;
+
+    transform:scale(1.4);
+
+}
+
+/* ==========================================
+        GIFT IMAGE
+========================================== */
+
+
+/* ==========================================
+        POPUP PARAGRAPH
+========================================== */
+
+#popupText{
+
+    white-space:pre-line;
+
+}
+.final-img{
+
+    width:220px;
+
+    height:280px;
+
+    object-fit:cover;
+
+    background:white;
+
+    padding:12px 12px 35px;
+
+    border-radius:12px;
+
+    box-shadow:0 18px 35px rgba(0,0,0,.25);
+
+    transition:.4s;
+
+}
+
+.final-img:hover{
+
+    transform:rotate(-3deg) scale(1.05);
+
+}
+
+/* ==========================================
+        THE END
+========================================== */

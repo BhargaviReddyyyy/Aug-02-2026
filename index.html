@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Friendship Day ❤️</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<audio id="music" preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="stars"></div>
+<div class="hearts"></div>
+
+<!-- ================= PAGE 1 ================= -->
+
+<section class="page active" id="page1">
+
+    <div class="content">
+
+        <h3>✨ Friendship Day Surprise ✨</h3>
+
+        <h1>Happy Friendship Day </h1>
+
+        <div class="main-heart">
+            ❤️
+        </div>
+
+        <p>
+
+            Every friendship has a story...
+
+            <br>
+
+            Ours is unforgettable ❤️
+
+        </p>
+
+        <button class="nextBtn" data-next="page2">
+
+            Begin Journey 💖
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+
+<section class="page" id="page2">
+
+    <div class="letter">
+
+        <h2>💌 A Letter For My Gang 💌</h2>
+
+        <p id="typingText"></p>
+
+        <button class="nextBtn" data-next="page3">
+
+            Continue →
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+
+<section class="page" id="page3">
+
+    <h1>📸 Our Memories</h1>
+
+    <div class="gallery">
+
+        <div class="photo-card" onclick="openMemory(1)">
+
+            <img src="images/img1.jpeg">
+
+            <span>Memory 1 ❤️</span>
+
+        </div>
+
+        <div class="photo-card" onclick="openMemory(2)">
+
+            <img src="images/img5.jpeg">
+
+            <span>Memory 2 😂</span>
+
+        </div>
+
+        <div class="photo-card" onclick="openMemory(3)">
+
+            <img src="images/img4.jpeg">
+
+            <span>Memory 3 💕</span>
+
+        </div>
+
+    </div>
+
+    <button class="nextBtn" data-next="page4">
+
+        Continue ❤️
+
+    </button>
+
+</section>
+
+<!-- ================= MEMORY POPUP ================= -->
+
+<div class="popup" id="popup">
+
+    <div class="popup-content">
+
+        <span class="close" onclick="closePopup()">&times;</span>
+
+        <h2 id="popupTitle"></h2>
+
+        <p id="popupText"></p>
+
+    </div>
+
+</div>
+
+<!-- ================= PAGE 4 ================= -->
+
+<section class="page" id="page4">
+
+    <div class="gift">
+
+        <img src="images/gift.jpeg" class="gift-box">
+
+        <h2>A Small Surprise Awaits </h2>
+
+        <button id="giftBtn">
+
+            Open Gift ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= PAGE 5 ================= -->
+
+<section class="page" id="page5">
+
+    <div class="final">
+
+    <h1>🎉 Happy Friendship Day 🎉</h1>
+
+    <img src="images/img5.jpeg" class="final-img">
+
+    <p>
+
+        Happy Friendship Day 💕
+
+    </p>
+
+    <button onclick="location.reload()">
+
+        Replay Journey 🔄
+
+    </button>
+
+</div>
+
+</section>
+
+<script src="js/script.js"></script>
+<script src="js/animation.js"></script>
+<script src="js/music.js"></script>
+<script src="js/typing.js"></script>
+
+</body>
+
+</html>

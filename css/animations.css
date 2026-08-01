@@ -1,0 +1,256 @@
+/* ==========================================
+        PAGE TRANSITIONS
+========================================== */
+
+.page{
+
+    transform:scale(.96);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease,
+        visibility .8s;
+
+}
+
+.page.active{
+
+    transform:scale(1);
+
+    animation:pageFade .8s ease;
+
+}
+
+@keyframes pageFade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px) scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+/* ==========================================
+        TITLE GLOW
+========================================== */
+
+h1{
+
+    animation:titleGlow 3s infinite alternate;
+
+}
+
+@keyframes titleGlow{
+
+    from{
+
+        text-shadow:
+            0 0 10px rgba(255,255,255,.8);
+
+    }
+
+    to{
+
+        text-shadow:
+            0 0 20px white,
+            0 0 35px hotpink,
+            0 0 55px deeppink;
+
+    }
+
+}
+
+/* ==========================================
+        FLOATING CONTENT
+========================================== */
+
+.content,
+.letter,
+.gift,
+.final{
+
+    animation:floatCard 5s ease-in-out infinite;
+
+}
+
+@keyframes floatCard{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+/* ==========================================
+        PHOTO ANIMATION
+========================================== */
+
+.photo-card{
+
+    animation:fadePhoto .8s ease;
+
+}
+
+.photo-card:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.photo-card:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+@keyframes fadePhoto{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(40px)
+            scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+/* ==========================================
+        GIFT BOUNCE
+========================================== */
+
+.gift-box{
+
+    animation:giftBounce 2s infinite;
+
+}
+
+@keyframes giftBounce{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+/* ==========================================
+        BUTTON SHINE
+========================================== */
+
+button{
+
+    animation:buttonGlow 2s infinite alternate;
+
+}
+
+@keyframes buttonGlow{
+
+    from{
+
+        box-shadow:
+            0 0 12px rgba(255,100,150,.4);
+
+    }
+
+    to{
+
+        box-shadow:
+            0 0 18px rgba(255,100,150,.6),
+            0 0 35px rgba(255,100,150,.5);
+
+    }
+
+}
+
+/* ==========================================
+        POPUP
+========================================== */
+
+.popup-content{
+
+    animation:popupZoom .35s ease;
+
+}
+
+@keyframes popupZoom{
+
+    from{
+
+        transform:scale(.7);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/* ==========================================
+        REPLAY BUTTON
+========================================== */
+
+.final button{
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%,100%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.06);
+
+    }
+
+}

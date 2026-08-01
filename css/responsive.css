@@ -1,0 +1,381 @@
+/* ==========================================
+            LAPTOPS
+========================================== */
+
+@media (max-width:1200px){
+
+.content,
+.letter,
+.gift,
+.final{
+
+    width:90%;
+
+}
+
+.gallery{
+
+    gap:20px;
+
+}
+
+.photo-card{
+
+    width:220px;
+
+}
+
+.photo-card img{
+
+    height:280px;
+
+}
+
+}
+
+/* ==========================================
+            TABLETS
+========================================== */
+
+@media (max-width:992px){
+
+.page{
+
+    padding:25px;
+
+}
+
+.content{
+
+    padding:50px 35px;
+
+}
+
+.content h1{
+
+    font-size:50px;
+
+}
+
+.letter{
+
+    padding:40px;
+
+}
+
+#typingText{
+
+    min-height:200px;
+
+    font-size:19px;
+
+}
+
+.gallery{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.photo-card{
+
+    width:230px;
+
+}
+
+.photo-card img{
+
+    height:260px;
+
+}
+
+.popup-content{
+
+    width:90%;
+
+}
+
+.gift-box{
+
+    width:200px;
+
+}
+
+.final h1{
+
+    font-size:48px;
+
+}
+
+.final p{
+
+    font-size:20px;
+
+}
+
+}
+
+/* ==========================================
+            MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+body{
+
+    overflow-x:hidden;
+
+}
+
+.page{
+
+    padding:20px;
+
+}
+
+.content{
+
+    width:100%;
+
+    padding:35px 20px;
+
+}
+
+.content h1{
+
+    font-size:36px;
+
+}
+
+.content h3{
+
+    font-size:18px;
+
+}
+
+.content p{
+
+    font-size:18px;
+
+}
+
+.main-heart{
+
+    font-size:60px;
+
+}
+
+button{
+
+    width:100%;
+
+    font-size:18px;
+
+    padding:15px;
+
+}
+
+.letter{
+
+    width:100%;
+
+    padding:30px 20px;
+
+}
+
+.letter h2{
+
+    font-size:28px;
+
+}
+
+#typingText{
+
+    font-size:17px;
+
+    min-height:170px;
+
+}
+
+.gallery{
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.photo-card{
+
+    width:90%;
+
+}
+
+.photo-card img{
+
+    height:auto;
+
+}
+
+.popup-content{
+
+    width:95%;
+
+    padding:30px 20px;
+
+}
+
+.popup-content h2{
+
+    font-size:28px;
+
+}
+
+.popup-content p{
+
+    font-size:18px;
+
+}
+
+.gift{
+
+    padding:35px 20px;
+
+}
+
+.gift-box{
+
+    width:170px;
+
+}
+
+.gift h2{
+
+    font-size:26px;
+
+}
+
+.final{
+
+    padding:35px 20px;
+
+}
+
+.final h1{
+
+    font-size:34px;
+
+}
+
+.final p{
+
+    font-size:18px;
+
+}
+
+.dots{
+
+    bottom:15px;
+
+}
+
+}
+
+/* ==========================================
+        SMALL PHONES
+========================================== */
+
+@media (max-width:480px){
+
+.content h1{
+
+    font-size:30px;
+
+}
+
+.content p{
+
+    font-size:16px;
+
+}
+
+.letter h2{
+
+    font-size:24px;
+
+}
+
+#typingText{
+
+    font-size:16px;
+
+}
+
+.photo-card{
+
+    width:95%;
+
+}
+
+.gift-box{
+
+    width:150px;
+
+}
+
+.gift h2{
+
+    font-size:22px;
+
+}
+
+.final h1{
+
+    font-size:28px;
+
+}
+
+.final p{
+
+    font-size:16px;
+
+}
+
+button{
+
+    font-size:16px;
+
+}
+
+}
+
+/* ==========================================
+        LARGE DESKTOPS
+========================================== */
+
+@media (min-width:1600px){
+
+.content,
+.letter,
+.gift,
+.final{
+
+    width:1000px;
+
+}
+
+.photo-card{
+
+    width:280px;
+
+}
+
+.photo-card img{
+
+    height:360px;
+
+}
+
+}
